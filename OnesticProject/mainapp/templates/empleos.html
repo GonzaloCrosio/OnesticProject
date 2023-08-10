@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+
+{% block title %} Empleos {% endblock %}
+
+{% block content %}
+    {{ block.super}}
+    <h1 class="title">Empleos</h1>
+    <h3>¿Quién dijo lejos?</h3>
+    <p>No nos importa desde que parte del mundo puedas colaborar con Onestic, sino lo interesante que sea para ti y para nosotros que trabajemos juntos.</p>
+    <br>
+
+    <h3>La luz, el mar y todo eso...</h3>
+    <p>Si prefieres una mesa a solo veintisiete minutos de la orilla del mar mediterráneo, entonces vente a nuestra oficina. Es nueva, es grande y está llena de personas.</p>
+    <br>
+
+    <h3>Si tienes una vida además del trabajo nosotros también</h3>
+    <p>Por eso intentamos que nuestro horario, salvo “incendios”, se adapte a nuestras vidas, no al contrario.</p>
+    <br>
+
+    <h3>Trabajamos con los mejores. Y también con los que aspiran a serlo</h3>
+    <p>Buscamos talento. Si crees que lo tienes, nosotros tenemos el mejor equipo para que lo desarrolles.</p>
+    <br>
+
+    <h3>Todos nuestros proyectos son grandes, aunque algún cliente sea pequeño</h3>
+    <p>Esa es una de nuestras máximas. “La importancia de un trabajo no se mide por el tamaño del cliente sino por la altura de sus objetivos”</p>
+    <br>
+
+    <h4>Te hemos dado cinco buenas razones para que te unas a nuestro equipo. Pero esto es solo la punta del iceberg. Mantén la respiración, guiña un ojo y dispara.</h4>
+    <br>
+
+    <h3>Ofertas de empleo:</h3>
+    
+
+    <ul class="job-list">
+        <li>
+            <strong>Magento Frontend Developer</strong>
+            <p>Required skills and experience:</p>
+            <ul>
+                <li>Great experience and knowledge in CSS 3 (Flexbox), Saas, HTML 5 and Javascript</li>
+                <li>Knowledge in Gulp, UX, WPO, PHP and MySql.</li>
+                <li>Use of git, not need to be a master of git but you should be comfortable working with branches, pull requests and code review.</li>
+                <li>Basic knowledge of Photoshop or Sketch.</li>
+            </ul>
+            
+            <a href="http://127.0.0.1:8000/contacto/" class="boton-borde">Send CV</a>
+        </li>
+
+        
+        <li><strong>Magento Backend Developer</strong>
+            <p>Required skills and experience:</p>
+            <ul>
+                <li>Great experience and knowledge with PHP: Symfony, Laravel,…</li>
+                <li>Solid experience writing SQL (MySQL) complex queries</li>
+                <li>Use of git, not need to be a master of git but you should be comfortable working with branches, tags, pull requests and code review.</li>
+                <li>You should work under code standards, design patterns and OOD.</li>
+            </ul>
+            
+            <a href="http://127.0.0.1:8000/contacto/" class="boton-borde">Send CV</a>
+        </li>
+
+        
+        <li><strong>Backend Software Engineer</strong>
+            <p>Required skills and experience:</p>
+            <ul>
+                <li>Our main language is python, but it is not essential that you have knowledge of python</li>
+                <li>We work with both SQL and noSQL, we expect you to have knowledge working with both systems.</li>
+                <li>Use of git, not need to be a master of git but you should be comfortable working with branches, tags, pull requests and code review.</li>
+                <li>Experience and ease working with agile methodologies such as Scrum.</li>
+            
+            </ul>
+
+            <a href="http://127.0.0.1:8000/contacto/" class="boton-borde">Send CV</a>
+        </li>
+    </ul>
+
+    {% load static %}
+    <div>
+        <img class="oficinaempleo" src="{% static 'images/oficina5.png' %}" />
+    </div>
+
+
+{% endblock %}

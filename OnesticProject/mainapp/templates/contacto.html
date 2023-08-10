@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block title %} Contacto {% endblock %}
+
+{% block content %}
+    
+    <div class="contact-info">
+        <h1 class="title">Llama, escribe, ven o envía una paloma mensajera. </h1>
+        <h3>Aquí tienes los datos</h3>
+
+        <p>Horario de atención al cliente:</p>
+        <p>De L-J de 8:00 a 16:30h - Viernes de 8:00 a 15:00h.</p>
+        <p>Calle Roger de Lauria, 19 - 4ª B1-B2, 46002, Valencia, España.</p>
+    
+        <p><a href="https://www.google.es/maps/place/Onestic,+Innovación+y+Desarrollo,+S.L./@39.4692918,-0.3732723,17z/data=!3m1!4b1!4m6!3m5!1s0xd604f4911ed1ccb:0x7564ede17431532e!8m2!3d39.4692918!4d-0.3732723!16s%2Fg%2F12lln8b4k?entry=ttu" target="_blank">Aquí nuestra ubicación en Google Maps!</a></p>
+        
+        <p><a href="http://127.0.0.1:8000/servicios/">Nuestros Servicios</a></p>
+        
+        <p><a href="http://127.0.0.1:8000/empleos/">Nuestras vacantes actuales</a></p>
+        
+        <h3>(+34 961 139 893) </h3>
+        
+        <h3>info@onestic.com</h3>
+    </div>
+
+    {% load static %}
+    <div>
+        <img class="oficina" src="{% static 'images/Oficina.png' %}" />
+    </div>
+{% endblock %}

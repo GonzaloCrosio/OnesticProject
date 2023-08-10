@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% block title %} Servicios {% endblock %}
+
+{% block content %}
+    {{ block.super}}
+    <h1 class="title">Ser los mejores: Cómo lo hacemos</h1>
+    <div class="servicios">
+        
+        <h3>Smartie Market Places</h3>
+        <p>Smartie es una solución SaaS que permite la gestión integral de catálogos entre diferentes plataformas, pedidos, envíos y devoluciones. Todo ello bajo un mismo entorno plenamente integrado con los sistemas de gestión conocidos como ERPs. aunque Smartie puede funcionar igualmente con plena autonomía sin estar conectado a un ERP, TPV, POS, etc.</p>
+        <p>Smartie se trata por tanto de una herramienta versátil y fiable capaz de adaptarse a la gestión de cualquier catálogo y destino de publicación por parte de herramientas externas, pudiendo almacenar, modificar y transformar las información que se almacena.</p>
+
+        <h3>Smartie</h3>
+        <h4>Importa ficheros de texto "acción masiva"</h4>
+        <p>Smartie carga datos de forma masiva desde ficheros de texto en formato CSV o XML y los actualiza inmediatamente en fichas de producto, traducciones o información SEO del catálogo.</p>
+
+        <h4>SMARTIE y ERP "conexión natural"</h4>
+        <p>Smartie es la vía lógica entre su ERP, como Dynamics, Navision o SAP, y sus plataformas de venta online. Se establece un flujo de gestión y trasvase de datos muy enérgico para que la información viaje segura y rápida desde su sistema de gestión tradicional hasta el propio Smartie. Una vez aquí se gestiona y distribuye entre todos los canales de venta que precise su negocio.</p>
+        
+        <h3>Devops</h3>
+        <p>Muchos clientes nos preguntan que nos diferencia de la competencia. Nosotros siempre contestamos lo mismo. Somos una empresa que tiene totalmente integrado los departamentos de desarrollo y sistemas, pues solo desde el conocimiento preciso de la aplicación y la arquitectura que lo soportará se pueden conseguir resultados óptimos en términos de seguridad y rendimiento. Este es nuestro secreto.</p>
+        
+        <h3>Design UX</h3>
+        <p>El diseño debe satisfacer la primera premisa, la atracción. Debe gustar a la vista, sorprender, pero cuando un diseño además de ser observado debe ser usado, entonces, el diseño debe ir mucho más allá, debe ser un elemento que ayude a la comprensión, que facilite el uso para el que fue concebido.</p>
+        <p>En Onestic hemos aprendido con los años, diseñando y midiendo los resultados, comprobando en cada proyecto los efectos de cada versión de diseño que hemos creado. Toda esta experiencia acumulada la ponemos al servicio de cada nuevo proyecto, ofreciendo las mejores propuestas creativas y funcionales, intentando mejorar en cada aplicación la experiencia de navegación y sensaciones que percibe el usuario.</p>
+        
+        <h3>Desarrollo</h3>
+        <p>Una de nuestras máximas es crear aplicaciones eficientes, bien construidas, de tal forma que la evolución de la aplicación sea fácil y rápida. Desarrollamos en Open Source, bajo la metodología Agile. Mediante sprints semanales con nuestro equipo de desarrollo vamos construyendo el proyecto paso a paso, testando la aplicación en cada fase, para que al final del proyecto todo funcione como se espera. Nuestros project managers son los encargados de velar por los intereses del cliente, intentando que el proyecto cumpla las expectativas en tiempo y forma. En cada encargo, nos zambullimos con toda la ilusión posible, intentando ofrecer el mayor nivel de calidad.</p>
+        
+        <h3>Consultoría ecommerce</h3>
+        <p>Decidir que tecnología es la más apropiada, cuanto tiempo puede llevar implantarla o que equipo necesitarás para la gestión de tu tienda son decisiones complicadas, por eso queremos ofrecerte toda nuestra experiencia para que todo sea más fácil y acertado. Cuenta con nosotros, seguro que podemos ayudarte.</p>
+        
+        <h3>Ciberseguridad</h3>
+        <p>La seguridad en internet es la asignatura pendiente, algo que cada día vemos reflejado en los medios de comunicación. Nada es totalmente seguro, lo sabemos, pero trabajamos intensamente para minimizar la vulnerabilidad de nuestras arquitecturas. Por eso cada día investigamos, analizamos y testamos nuestros sistemas y aplicaciones, para por lo menos, irnos a la cama sabiendo que hemos hecho todo lo posible.</p>
+    </div>
+
+    {% load static %}
+    <div>
+        <img class="logomadera" src="{% static 'images/oficina6.png' %}" />
+    </div>
+
+{% endblock %}

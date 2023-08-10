@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title %} Datos {% endblock %}
+
+{% block content %}
+    
+    <div class="contact-info">
+        <h1 class="title">Empresas en nuestra base de datos </h1>
+        <h3>Aquí tienes los nombres y su mercado. Si quieres las puedes eliminar de nuestros registros</h3>
+
+        <ul>
+            {% for producto in productos %}
+                <li>
+                    <h4>{{producto.id}} {{producto.title}}</h4>
+                    <p>{{producto.content}}</p>
+                    <form method="post" action= "{% url 'delete_product' producto.id %}">
+                        {% csrf_token %}
+                        <button type="submit">Eliminar</button>
+                    </form>
+                    <br/>
+                </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+{% endblock %}

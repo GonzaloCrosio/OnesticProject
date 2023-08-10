@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} 
+            
+           {% endblock %}
+           {% comment 'Esto es un comentario: Para cargar los ficheros estáticos que sirven para conectar los archivos css con los html en django' %} {% endcomment %}
+    </title>
+
+    {% load static %}
+    
+    <!-- link css file with my views -->
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css'%}" />
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div id = "logotipo">
+             Logo Onestic
+            <h1>
+            <img src="{% static 'images/onesticlogo.png' %}" />
+            Django Project - Gonzalo Crosio</h1>
+        </div>
+    </header>
+
+    <!-- Link urls - views -->
+    <nav>
+        <hr/>
+        <ul>
+            <li><a href="{% url 'servicios' %}">Servicios</a></li>
+            <li><a href="{% url 'empleos' %}">Empleos</a></li>
+            <li><a href="{% url 'nosotros' %}">Nosotros</a></li>
+            <li><a href="{% url 'contacto' %}">Contacto</a></li>
+            <li><a href="{% url 'datos' %}">Datos</a></li>
+            <li><a href="{% url 'save' %}">Crear Datos</a></li>
+        </ul>
+    </nav>
+
+    <!--Efect 3D in barra with CSS3-->
+    <div class="barra">
+        <span class="esquina-izquierda"></span>
+        <span class="relleno-barra"></span>
+        <span class="esquina-derecha"></span>
+    </div>
+
+    <!-- Use blocks and inheritances -->
+    <div id="content">
+
+        <div class="box">
+            
+            {% block content %}
+            <!-- Here the code that comes from templates will be loaded -->
+            
+            {% endblock %}
+
+        </div>
+        
+    </div>
+    <hr/>
+    <footer>Onestic Django-Python &copy; Gonzalo Crosio - {% now "DATE_FORMAT" %}</footer>
+</body>
+</html>
+
+
+
+
