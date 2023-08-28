@@ -1,0 +1,64 @@
+{% extends 'layout.html' %}
+
+{% block title %} Registro de Usuarios {% endblock %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+    
+    <!-- Para mostrar los errores en el relleno del formulario -->
+    {{register_form.errors}}
+
+        <!-- Creación del formulario -->
+    <form method="post" action ="">
+        {%csrf_token%}
+        
+        {% comment "" %}
+        <!--Puedo mostrar el formulario según viene django con este código:-->
+        {{register_form.as_p}}
+        {% endcomment %}
+
+        {% comment "" %}
+            {{register_form.username}}
+            {{register_form.first_name}}
+            {{register_form.last_name}}
+            {{register_form.email}}
+        {% endcomment %}
+        
+        <!--También puedo mostrarlo campo por campo si quiero ser bien específico:-->
+        <label class="registro">
+
+            {{register_form.username.label}}
+            <input class="input" type="text1" {{register_form.username}}
+            
+
+            {{register_form.first_name.label}}
+            <input class="input" type="text1" {{register_form.first_name}}
+
+            {{register_form.last_name.label}}
+            <input class="input" type="text1" {{register_form.last_name}}
+
+            {{register_form.email.label}}
+            <input class="input" type="text1" {{register_form.email}}
+
+            {{register_form.password1.label}}
+            <input class="input" type="password" {{register_form.password1}}
+
+            {{register_form.password2.label}}
+            <input class="input" type="password" {{register_form.password2}}
+
+        </label>
+        
+        {% comment "" %}
+            <br>
+            {% for field in register_form %}
+                <label>{{field.label}}</label>
+                <input class="input" type="text" {{field}}>
+            {% endfor %}<br>
+        {% endcomment %}
+
+
+            <input type="submit" value="Registrarse"/>
+    </form>
+
+
+{% endblock %}

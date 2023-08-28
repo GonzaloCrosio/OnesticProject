@@ -22,7 +22,7 @@ class Category(models.Model):
 class Product(models.Model):
     title = models.CharField(max_length=150, verbose_name="Título") 
     content = models.TextField(verbose_name="Contenido")            
-    image = models.ImageField(default='null', upload_to='products') 
+    image = models.ImageField(default='null', verbose_name='Imagen', upload_to='products') 
     public = models.BooleanField(verbose_name="¿Publicado?")         
     user = models.ForeignKey(User, verbose_name='Usuario', editable=False, on_delete=models.CASCADE, default=1)
     categories = models.ManyToManyField(Category, verbose_name='Categorías', blank=True)

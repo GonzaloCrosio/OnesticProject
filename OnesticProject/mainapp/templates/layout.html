@@ -31,12 +31,19 @@
     <nav>
         <hr/>
         <ul>
-            <li><a href="{% url 'servicios' %}">Servicios</a></li>
-            <li><a href="{% url 'empleos' %}">Empleos</a></li>
-            <li><a href="{% url 'nosotros' %}">Nosotros</a></li>
-            <li><a href="{% url 'contacto' %}">Contacto</a></li>
-            <li><a href="{% url 'datos' %}">Datos</a></li>
-            <li><a href="{% url 'save' %}">Crear Datos</a></li>
+            <li><a href="{% url 'inicio' %}">Inicio</a></li>
+            {% if user.is_authenticated  %}
+                <li><a href="{% url 'nosotros' %}">Nosotros</a></li>
+                <li><a href="{% url 'servicios' %}">Servicios</a></li>
+                <li><a href="{% url 'empleos' %}">Empleos</a></li>
+                <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                <li><a href="{% url 'datos' %}">Datos</a></li>
+                <li><a href="{% url 'save' %}">Crear Datos</a></li>
+                <li><a href="{% url 'logout'%}">Cerrar Sesión</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'registro' %}">Registro</a></li>
+            {% endif %}
         </ul>
     </nav>
 

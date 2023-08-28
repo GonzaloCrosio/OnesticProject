@@ -27,3 +27,8 @@ urlpatterns = [
 
 # http://127.0.0.1:8000
 # http://127.0.0.1:8000/vista/
+
+# Ruta imágenes
+if settings.DEBUG:
+    from django.conf.urls.static import static
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block title %} Inicio {% endblock %}
+
+{% block content %}
+
+    {{ block.super}}
+    <h1 class=title> Inicio </h1>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success">
+                <h2>{{message}}</h2>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <!-- Si hay un usuario logeado muestra datos, else no muestra nada -->
+    {% if user.is_authenticated %}
+        
+        <h2>Bienvenido a nuestra página {{request.user.first_name}} {{user.last_name}}</h2><br>
+        <p> Está registrado con el correo {{user.email}} </p><br>
+        <ul>
+            <li> En esta página web podrá navegar por nuestras distintas pestañas:</li><br>
+            <li> En Nosotros verá una descripción de nuestra empresa </li><br>
+            <li> En Servicios verá un resumen de nuestras especializaciones </li><br>
+            <li> En Empleos verá una lista de nuestras oportunidades laborales </li><br>
+            <li> En Contacto verá nuestra forma de comunicarnos con las personas </li><br>
+            <li> En Datos verá la base de datos que está creada en SQL-Django y podrá eliminar los que desee </li><br>
+            <li> En Crear Datos podrá añadir los datos que quiera a nuestra base SQL-Django </li><br>
+        </ul>
+
+    {% else %}
+        <h2> Por favor identificate a través de la pestaña de Login para poder entrar a nuestra página </h2>
+    {% endif %}
+
+    {% load static %}
+    <div>
+        <img class="oficinaempleo" src="{% static 'images/oficina9.png' %}" />
+    </div>
+    
+{% endblock %}

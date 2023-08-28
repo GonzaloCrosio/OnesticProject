@@ -165,6 +165,16 @@ nav ul li a:hover{
     margin-bottom: 15px;
 }
 
+/* Format login page */
+.box form input[type="texto"],
+.box form input[type="login"],
+.box form input[type="password"],
+.box form textarea,
+.box form select{
+    width: 50%;
+    margin-bottom: 15px;
+}
+
 /* Format empleos page */
 
 .job-list {
@@ -250,10 +260,10 @@ footer{
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    height: 40px;
+    height: 50px;
 }
 
-/* By bottom eliminar y guardar */
+/* By bottom guardar */
 .box form input[type="submit"],
 .box form input[type="button"],
 .box form button{
@@ -270,4 +280,46 @@ footer{
 .box form button:hover{
     cursor: pointer;
     background: blue;
+}
+
+/* Format page Registro */
+
+.registro{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alineación vertical al inicio */
+    gap: 10px; /* Espacio entre etiqueta y campo */
+}
+
+.registro label {
+    font-weight: bold;
+}
+
+.registro input {
+    width: 90px; /* O el porcentaje deseado */
+    height: 15px;
+}
+
+.box form input[type="password"],
+.box form input[type="text1"]{
+    width: 250px;
+    margin-bottom: 25px;
+    height: 25px;
+    border: 1px solid #444;
+    text-align: left;
+    vertical-align: middle;
+}
+
+/* Estilo a las imágenes de los productos */
+.box .image{
+    width: 20%;
+    float: left;
+    margin-right: 15px;
+    margin-top: 15px;
+}
+
+.box .image img{
+    width: 50%;
+    margin-top: 10px;
 }
