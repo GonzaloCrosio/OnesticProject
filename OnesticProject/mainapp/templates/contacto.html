@@ -1,11 +1,10 @@
 {% extends 'layout.html' %}
 
-{% block title %} Contacto {% endblock %}
+{% block title %} Llama, escribe, ven o envía una paloma mensajera. {% endblock %}
 
 {% block content %}
     
     <div class="contact-info">
-        <h1 class="title">Llama, escribe, ven o envía una paloma mensajera. </h1>
         <h3>Aquí tienes los datos</h3>
 
         <p>Horario de atención al cliente:</p>
@@ -24,7 +23,7 @@
     </div>
 
     {% load static %}
-    <div>
-        <img class="oficina" src="{% static 'images/Oficina.png' %}" />
-    </div>
+
+    <div><img class="oficina" src="{% static 'images/Oficina.png' %}" /></div>
+    
 {% endblock %}

@@ -1,40 +1,37 @@
 
 {% extends 'layout.html' %}
 
-
-{% block title %} Carga de datos con Formulario Django {% endblock %}
-
+{% block title %} Carga de Datos con Formulario Django en SQL {% endblock %}
 
 {% block content %}
 
-<h1 class="title">Carga de datos con Formulario Django</h1>
-    
-<form action="{% url 'save' %}" method="POST">
+    <form action="{% url 'save' %}" method="POST">
 
-    {% csrf_token %}
+        {% csrf_token %}
 
-    <label for="title">Titulo</label>
-    <input class="input" type="text" name="title" placeholder="   Introduce el nombre del producto" />
+        </br>
+        <label for="title">Titulo</label>
+        <input class="input" type="text" name="title" placeholder="   Introduce el nombre del producto" />
 
-    <label for="content">Contenido</label>
-    <input class="input" type="text" name="content" placeholder="   Introduce la descripción del producto"></input>
+        <label for="content">Contenido</label>
+        <input class="input" type="text" name="content" placeholder="   Introduce la descripción del producto"></input>
 
-    <label for="public">¿Publicado?</label>
-    <select name="public">
-        <!-- If answer SI value=1 = True. If value=0 is False-->
-        <option value="1">Si</option>
-        <option value="0">No</option>
-    </select>
+        <label for="public">¿Publicado?</label>
+        <select name="public">
+            <!-- If answer SI value=1 = True. If value=0 is False-->
+            <option value="1">Si</option>
+            <option value="0">No</option>
+        </select>
 
-    <label for="categories">¿Qué categoría es?</label>
-    <select name="categories">
-        <option value="1">Empresas más valoradas del mundo</option>
-        <option value="0">Empresas ERP</option>
-    </select>
+        <label for="categories">¿Qué categoría es?</label>
+        <select name="categories">
+            <option value="1">Empresas más valoradas del mundo</option>
+            <option value="0">Empresas ERP</option>
+        </select>
 
-    <input type="submit" value="Guardar"/>
+        <input type="submit" value="Guardar"/>
 
-</form>
+    </form>
 
 
 {% endblock %}

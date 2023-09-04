@@ -3,62 +3,42 @@
 {% block title %} Registro de Usuarios {% endblock %}
 
 {% block content %}
-    <h1>{{ title }}</h1>
     
-    <!-- Para mostrar los errores en el relleno del formulario -->
+    <!-- To display errors in the form fill-in -->
     {{register_form.errors}}
 
-        <!-- Creación del formulario -->
+        <!-- Create form -->
     <form method="post" action ="">
         {%csrf_token%}
         
-        {% comment "" %}
-        <!--Puedo mostrar el formulario según viene django con este código:-->
-        {{register_form.as_p}}
-        {% endcomment %}
-
-        {% comment "" %}
-            {{register_form.username}}
-            {{register_form.first_name}}
-            {{register_form.last_name}}
-            {{register_form.email}}
-        {% endcomment %}
-        
-        <!--También puedo mostrarlo campo por campo si quiero ser bien específico:-->
+        <!-- I display field by field if I want to be very specific: -->
         <label class="registro">
 
             {{register_form.username.label}}
-            <input class="input" type="text1" {{register_form.username}}
+            <input class="input" type="text1" name="username" value="{% if register_form.username.value %}{{ register_form.username.value }}{% endif %}" />
             
-
             {{register_form.first_name.label}}
-            <input class="input" type="text1" {{register_form.first_name}}
+            <input class="input" type="text1" name="first_name" value="{% if register_form.first_name.value %}{{ register_form.first_name.value }}{% endif %}" />
 
             {{register_form.last_name.label}}
-            <input class="input" type="text1" {{register_form.last_name}}
+            <input class="input" type="text1" name="last_name" value="{% if register_form.last_name.value %}{{ register_form.last_name.value }}{% endif %}" />
 
             {{register_form.email.label}}
-            <input class="input" type="text1" {{register_form.email}}
+            <input class="input" type="text1" name="email" value="{% if register_form.email.value %}{{ register_form.email.value }}{% endif %}" />
 
             {{register_form.password1.label}}
-            <input class="input" type="password" {{register_form.password1}}
+            <input class="input" type="password" name="password1" value="{% if register_form.password1.value %}{{ register_form.password1.value }}{% endif %}" />
 
             {{register_form.password2.label}}
-            <input class="input" type="password" {{register_form.password2}}
+            <input class="input" type="password" name="password2" value="{% if register_form.password2.value %}{{ register_form.password2.value }}{% endif %}" />
 
         </label>
-        
-        {% comment "" %}
-            <br>
-            {% for field in register_form %}
-                <label>{{field.label}}</label>
-                <input class="input" type="text" {{field}}>
-            {% endfor %}<br>
-        {% endcomment %}
-
 
             <input type="submit" value="Registrarse"/>
     </form>
 
+    {% load static %}
+
+    <div><img class="logomadera" src="{% static 'images/oficina6.png' %}" /></div>
 
 {% endblock %}

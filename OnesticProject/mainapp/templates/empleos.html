@@ -3,8 +3,7 @@
 {% block title %} Empleos {% endblock %}
 
 {% block content %}
-    {{ block.super}}
-    <h1 class="title">Empleos</h1>
+    
     <h3>¿Quién dijo lejos?</h3>
     <p>No nos importa desde que parte del mundo puedas colaborar con Onestic, sino lo interesante que sea para ti y para nosotros que trabajemos juntos.</p>
     <br>
@@ -30,7 +29,6 @@
 
     <h3>Ofertas de empleo:</h3>
     
-
     <ul class="job-list">
         <li>
             <strong>Magento Frontend Developer</strong>
@@ -45,7 +43,6 @@
             <a href="http://127.0.0.1:8000/contacto/" class="boton-borde">Send CV</a>
         </li>
 
-        
         <li><strong>Magento Backend Developer</strong>
             <p>Required skills and experience:</p>
             <ul>
@@ -58,7 +55,6 @@
             <a href="http://127.0.0.1:8000/contacto/" class="boton-borde">Send CV</a>
         </li>
 
-        
         <li><strong>Backend Software Engineer</strong>
             <p>Required skills and experience:</p>
             <ul>
@@ -74,9 +70,7 @@
     </ul>
 
     {% load static %}
-    <div>
-        <img class="oficinaempleo" src="{% static 'images/oficina5.png' %}" />
-    </div>
+    <div><img class="oficinaempleo" src="{% static 'images/oficina5.png' %}" /></div>
 
 
 {% endblock %}

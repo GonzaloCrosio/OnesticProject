@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib import messages
+from django.contrib import messages, auth
 from mainapp.form import RegisterForm
 from django.contrib.auth import authenticate, login, logout
 
@@ -23,24 +23,26 @@ def contacto(request):
 
 def registro(request):
 
-        # Si el usuario está identificado que nos rediriga a inicio
+        # If the user is authenticated, redirect to the home page "inicio"
     if request.user.is_authenticated:
         return redirect('inicio')
     
     else:
         register_form = RegisterForm()
 
-        # Para guardar un usuario nuevo a través del formulario creado en register. Si el formulario es válido que me guarde el usuario.
-        # El método form está armado para que me guarde el usuario directamente en django. Si el usuario es creado te redirige a la página de inicio
+        # To save a new user through the form created in register. If the form is valid, save the user
+        # The form method is set up to save the user directly in Django. If the user is created, it redirects you to the home page "inicio"
         if request.method == 'POST':
             register_form = RegisterForm(request.POST)
 
             if register_form.is_valid():
-                register_form.save()
-                # Creación del mensaje flash
+                user = register_form.save()
+                # Creation of the flash message
                 messages.success(request, 'Te has registrado correctamente')
 
-                return redirect('/inicio')
+                login(request, user)
+
+                return redirect('inicio')
 
         return render(request, 'registro.html',{
             'title': 'Registro',
@@ -49,26 +51,25 @@ def registro(request):
 
 def user_login(request):
 
-            # Si el usuario está identificado que nos rediriga a inicio
+            # If the user is authenticated, redirect to the home page "inicio"
     if request.user.is_authenticated:
         return redirect('inicio')
     
     else:
 
         if request.method == 'POST':
-            # Verifico que me esté llegando estos dos datos
+            # I check that these two pieces of data are coming
             username = request.POST.get('username')
             password = request.POST.get('password')
 
-            # A la variable user le paso los datos que tiene el usuario.
             user = authenticate(request, username=username, password=password)
 
-            # Si la autenticación no ha fallado nos redirige al inicio
+            # If authentication hasn't failed, it redirects us to the start/home page "inicio"
             if user is not None:
                 login(request, user)
                 return redirect('inicio')
             
-            # Si el usuario se identifica de forma errónea nos aparece este mensaje
+            # If the user identifies themselves incorrectly, this message appears
             else:
                 messages.warning(request, 'No te has identificado correctamente')
 
@@ -81,6 +82,6 @@ def inicio(request):
     return render(request, 'inicio.html')
 
 def logout_user(request):
-    # Utilizo el método logout y que me redireccione a la url de login
+    # I use the logout method and have it redirect me to the login URL
     logout(request)
     return redirect('login')

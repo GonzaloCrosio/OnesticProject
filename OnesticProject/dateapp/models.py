@@ -35,9 +35,5 @@ class Product(models.Model):
         ordering = ['id']                                           # Order the list on the admin user
 
     def __str__(self):                                              # It is used for the name of the product to appear in the list of the administrator user
-        if self.public:
-            public="(publicado)"
-        else:
-            public="(privado)"
-
-        return f"{self.title} ({self.public})"
+        public_status = "publicado" if self.public else "privado"
+        return f"{self.title} ({public_status})"

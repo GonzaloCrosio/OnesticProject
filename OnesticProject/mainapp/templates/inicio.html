@@ -4,18 +4,13 @@
 
 {% block content %}
 
-    {{ block.super}}
-    <h1 class=title> Inicio </h1>
-
     {% if messages %}
         {% for message in messages %}
-            <div class="alert alert-success">
-                <h2>{{message}}</h2>
-            </div>
+            <div class="alert alert-success"><h2>{{message}}</h2></div>
         {% endfor %}
     {% endif %}
 
-    <!-- Si hay un usuario logeado muestra datos, else no muestra nada -->
+    <!-- If there is a logged-in user, display data; otherwise, display nothing -->
     {% if user.is_authenticated %}
         
         <h2>Bienvenido a nuestra página {{request.user.first_name}} {{user.last_name}}</h2><br>
@@ -30,13 +25,12 @@
             <li> En Crear Datos podrá añadir los datos que quiera a nuestra base SQL-Django </li><br>
         </ul>
 
-    {% else %}
+        {% else %}
         <h2> Por favor identificate a través de la pestaña de Login para poder entrar a nuestra página </h2>
     {% endif %}
 
     {% load static %}
-    <div>
-        <img class="oficinaempleo" src="{% static 'images/oficina9.png' %}" />
-    </div>
+
+    <div><img class="oficinaempleo" src="{% static 'images/oficina9.png' %}" /></div>
     
 {% endblock %}

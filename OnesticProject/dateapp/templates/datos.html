@@ -1,12 +1,12 @@
 {% extends 'layout.html' %}
 
-{% block title %} Datos {% endblock %}
+{% block title %} Empresas y Productos en nuestra Base de Datos SQL {% endblock %}
 
 {% block content %}
     
     <div class="contact-info">
-        <h1 class="title">Empresas en nuestra base de datos </h1>
-        <h3>Aquí tienes los nombres y su mercado. Si quieres las puedes eliminar de nuestros registros</h3>
+
+        <h3>Aquí puedes eliminar el registro que desees. Puedes agregar registros en la pestaña "Crear Datos"</h3>
 
         <div>
             {% for producto in productos %}
@@ -30,7 +30,7 @@
                     <hr>
                 </div>
             {% endfor %}
-            </div>
+        </div>
 
     </div>
 

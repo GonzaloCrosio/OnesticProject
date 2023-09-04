@@ -3,33 +3,33 @@
 {% block title %} Login de Usuarios {% endblock %}
 
 {% block content %}
-    <h1>{{ title }}</h1>
 
-    <!-- Que aparezca el mensaje de fallo en la identificación del usuario-->
+    <!-- Display the user identification failure message -->
     {% if messages %}
-    {% for message in messages %}
-        <div class="alert alert-warning">
-            {{message}}
-        </div>
-    {% endfor %}
+        {% for message in messages %}
+            <div class="alert alert-warning">{{message}}</div>
+        {% endfor %}
     {% endif %} 
     
-    <!-- Para mostrar los errores en el relleno del formulario -->
+    <!-- To display errors in the form fill-in. -->
     {{register_form.errors}}
 
-        <!-- Creación del formulario -->
+        <!-- Form creation -->
     <form method="post" action ="">
         {%csrf_token%}
         
         <br><label for="username">Nombre de usuario</label><br>
-        <br><input type="text1" name="username" /><br>
+        <br><input type="text1" name="username"/><br>
 
         <br><label for="password">Contraseña</label><br>
-        <br><input type="password" name="password" /><br>
+        <br><input type="password" name="password"/><br>
 
-        <input type="submit" value="Login" />
+        <input type="submit" value="Login"/>
 
     </form>
 
+    {% load static %}
+
+    <div><img class="oficinaempleo" src="{% static 'images/oficina5.png' %}" /></div>
 
 {% endblock %}
